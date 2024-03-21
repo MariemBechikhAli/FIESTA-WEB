@@ -3,5 +3,6 @@ import { AuthentificationComponent } from './authentification/authentification.c
 
 
 export const routes: Routes = [
-    {'path': '', component:AuthentificationComponent}
+    {path: '', redirectTo: 'login', pathMatch:'full'},
+    {path: 'login', component:AuthentificationComponent}
 ];
