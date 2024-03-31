@@ -6,31 +6,54 @@
                 <div class="desc">Conçu pour les professeurs qui visent la réussite de leurs étudiants </div>
             </div>             
             <div class="showcase-content">
-                <div class="showcase-top">
-                    <h1>LOGIN</h1>
-                </div>
-            <div class="formm">
-                <form>
-                    <h2>Welcome user!
-                    </h2>
-                    <div class="info">
-                        <input class="email" type="email" placeholder="Email" id="email"> <br>
-                        <input class="email" type="password" placeholder="Password" id="password">
+                <div class="Form" hidden>
+                    <div class="showcase-top">
+                        <h1>Authentification</h1>
                     </div>
-                    <div class="btn">
-                        <button class="btn-primary" type="submit" onclick="signIn()">Sign In</button>
-                    </div>
-                    <div class="help">
-                        <div>
-                            <input value="true" type="checkbox"><label>Remember me</label>
+                    <form>
+                        <div class="info">
+                            <input class="email" type="email" placeholder="Identifiant" id="email"> <br>
+                            <input class="email" type="password" placeholder="Mot de passe" id="password">
+                            <input class="email" type="text" placeholder="Code de l'organisation" id="password">
                         </div>
+                        <div class="btn">
+                            <button class="btn-primary" type="submit" onclick="signIn()">Se connecte</button>
+                        </div>
+                        <!-- <div class="signup">
+                            <p>New to User ?</p>
+                            <a href="#">Sign up now</a>
+                        </div> -->
+                    </form>
+                </div>
+                <div class="Form" hidden>
+                    <div class="showcase-top">
+                        <h2> Veuillez scanner le QRCode via Microsoft Authenticator</h2>
                     </div>
-                    <div class="signup">
-                        <p>New to User ?</p>
-                        <a href="#">Sign up now</a>
+                    <form>
+                        <div class="info">
+                            <img id="qrcodeimg" width="320px" height="300px"
+                             src='{{ "assets/images/imgOtp.png"}}' href="qrCode">
+                        </div>
+                        <div class="btn">
+                            <button class="btn-primary" type="submit" onclick="signIn()">Confirmer que c'est scanné</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="Form" >
+                    <div class="showcase-top">
+                        <h2> Entrer le code d'authentification</h2>
                     </div>
-                </form>
-            </div>
+                    <form>
+                        <div class="info">
+                            <header>
+                                <fa-icon [icon]="faCoffee"></fa-icon>
+                            </header>
+                        </div>
+                        <div class="btn">
+                            <button class="btn-primary" type="submit" onclick="signIn()">Confirmer que c'est scanné</button>
+                        </div>
+                    </form>
+                </div>
             </div> 
         </div>
     </header>
