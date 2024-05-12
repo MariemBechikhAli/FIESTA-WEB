@@ -1,23 +1,26 @@
-<body>
+<div>
     <header class="showcase">
         <div class="g-container">
             <div class="fista-logo">
                 <img src='{{ "assets/images/logo-fiesta-renverse.png"}}' width="30%" alt="FIESTA" srcset="">
                 <div class="desc">Conçu pour les professeurs qui visent la réussite de leurs étudiants </div>
-            </div>             
+            </div>
             <div class="showcase-content">
-                <div class="Form" hidden>
+                <div class="Form">
                     <div class="showcase-top">
                         <h1>Authentification</h1>
                     </div>
-                    <form>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <div class="info">
-                            <input class="email" type="email" placeholder="Identifiant" id="email"> <br>
-                            <input class="email" type="password" placeholder="Mot de passe" id="password">
-                            <input class="email" type="text" placeholder="Code de l'organisation" id="password">
+                            <input type="text" placeholder="Identifiant" id="user_id" formControlName="user_id" [class]="{invalid:loginForm.get('user_id')?.hasError('required')}"> @if (loginForm.get('user_id')?.hasError('required') && loginForm.get('user_id')?.touched)
+                            {
+                            <div class="form-eror">Idenifiant obligatoire</div>
+                            }
+                            <input type="password" placeholder="Mot de passe" id="password" formControlName="password">
+                            <input type="text" placeholder="Code de l'organisation" id="company_id" formControlName="company_id">
                         </div>
                         <div class="btn">
-                            <button class="btn-primary" type="submit" onclick="signIn()">Se connecte</button>
+                            <button class="btn-primary" type="submit" type="submit">Se connecte</button>
                         </div>
                         <!-- <div class="signup">
                             <p>New to User ?</p>
@@ -31,31 +34,38 @@
                     </div>
                     <form>
                         <div class="info">
-                            <img id="qrcodeimg" width="320px" height="300px"
-                             src='{{ "assets/images/imgOtp.png"}}' href="qrCode">
+                            <img id="qrcodeimg" width="320px" height="300px" src='{{ "assets/images/imgOtp.png"}}' href="qrCode">
                         </div>
                         <div class="btn">
                             <button class="btn-primary" type="submit" onclick="signIn()">Confirmer que c'est scanné</button>
                         </div>
                     </form>
                 </div>
-                <div class="Form" >
+                <div class="Form" hidden>
                     <div class="showcase-top">
-                        <h2> Entrer le code d'authentification</h2>
+                        <h3> Entrer le code d'authentification</h3>
                     </div>
                     <form>
                         <div class="info">
-                            <header>
-                                <fa-icon [icon]="faCoffee"></fa-icon>
-                            </header>
+                            <span class="security-icon">
+                                <i class="fa-solid fa-user-shield fa-9x"></i>
+                            </span>
+                            <div class="input-field">
+                                <input id="otpCode-1" type="number" />
+                                <input id="otpCode-2" type="number" disabled />
+                                <input id="otpCode-3" type="number" disabled />
+                                <input id="otpCode-4" type="number" disabled />
+                                <input id="otpCode-5" type="number" disabled />
+                                <input id="otpCode-6" type="number" disabled />
+                            </div>
                         </div>
                         <div class="btn">
                             <button class="btn-primary" type="submit" onclick="signIn()">Confirmer que c'est scanné</button>
                         </div>
                     </form>
                 </div>
-            </div> 
+            </div>
         </div>
     </header>
     <script src="./index.js"></script>
-</body>
+</div>

@@ -1,4 +1,3 @@
-
 ul {
     list-style: none;
 }
@@ -37,22 +36,25 @@ p {
     width: 100%;
     height: 100%;
     z-index: 1;
-   /*  background: rgba(0, 0, 0, 0.65); */
+    /*  background: rgba(0, 0, 0, 0.65); */
     box-shadow: inset 30px 10px 150px #000000;
 }
-.g-container{
+
+.g-container {
     display: flex;
     justify-content: space-between;
 }
-.fista-logo{
+
+.fista-logo {
     width: 50%;
     position: relative;
     left: 1%;
- } 
- .fista-logo .desc{
+}
+
+.fista-logo .desc {
     z-index: 8;
     font-family: Roboto;
-  /*   color: rgba(255, 255, 255, 0.75); */
+    /*   color: rgba(255, 255, 255, 0.75); */
     background: linear-gradient(to right, rgba(255, 255, 255, 0.75), white);
     background-clip: text;
     -webkit-background-clip: text;
@@ -110,7 +112,7 @@ p {
     margin-bottom: 20px;
 }
 
-.Form .info .email {
+.Form .info input {
     margin-bottom: 30px;
     width: 100%;
     height: 50px;
@@ -215,4 +217,45 @@ input[type="password"] {
 
  ::-webkit-scrollbar-track {
     border-radius: 10px;
+}
+
+.security-icon {
+    color: #88bb2f;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+}
+
+:where(#input-otpCode,
+#form-otpCode,
+.input-field,
+header) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info .input-field {
+    flex-direction: row;
+    column-gap: 6px;
+}
+
+.input-field input {
+    height: 45px;
+    width: 42px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1.125rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.input-field input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.input-field input::-webkit-inner-spin-button,
+.input-field input::-webkit-outer-spin-button {
+    display: none;
 }
